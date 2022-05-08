@@ -25,9 +25,9 @@ def create_dict_f():
 
 def write_in_owner(path, text_owner):
     with open(path + '\\' + 'owner_doc.txt', 'w') as f:
-        for i in range(len(text_owner)):
-            string_name = str(text_owner)
-            f.write(f"{string_name.split(':')[0]} + '\n' + {string_name.split(':')[1]}")
+        for k in text_owner:
+            string_doc = str(text_owner[k])
+            f.write(f"{k}  \n  {string_doc} \n")
 
 
 def main():
