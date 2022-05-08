@@ -21,6 +21,8 @@ def create_dict_f():
                     end = string.find('</dc:creator>')
                     start = string.find('<dc:creator>')
                 name = string[start + 12:end]
+                if name is None:
+                    name = 'Аноним'
                 try:
                     name_dict[name] += [list_text[i]]
                 except KeyError:
