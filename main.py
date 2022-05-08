@@ -27,7 +27,7 @@ def write_in_owner(path, text_owner):
     with open(path + '\\' + 'owner_doc.txt', 'w') as f:
         for k in text_owner:
             owner = text_owner[k]
-            f.write(k + '\n')
+            f.write('Владелец - ' + k + ':' + '\n')
             for i in range(len(owner)):
                 f.write(owner[i] + '\n')
             f.write('\n')
