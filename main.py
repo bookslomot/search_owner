@@ -13,18 +13,13 @@ def create_dict_f():
         if list_text[i].split('.')[1] in ('xlsx', 'xls', 'doc', 'ppt', 'pptx', 'docx'):
             path_doc = path + '\\' + list_text[i]
             try:
-                print('fewfewfefwef' + 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
                 z = zipfile.ZipFile(path_doc, 'r')
                 z.printdir()
                 z.extract('docProps/core.xml')
                 with open('docProps/core.xml', 'r') as f:
                     string = f.readlines()[1]
-                    print(string)
                     end = string.find('</dc:creator>')
                     start = string.find('<dc:creator>')
-                    print(start)
-                    print(end)
-                    print('------------------    ' + string[start + 12:end] + '    ---------------')
                 name = string[start + 12:end]
                 try:
                     name_dict[name] += [list_text[i]]
@@ -56,7 +51,6 @@ def write_in_owner(path, text_owner):
 def main():
     path, name_dict = create_dict_f()
     write_in_owner(path, name_dict)
-    print('ПУК')
 
 
 if __name__ == '__main__':
