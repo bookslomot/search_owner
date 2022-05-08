@@ -20,20 +20,19 @@ def create_dict_f():
             except KeyError:
                 name_dict[name] = [list_text[i]]
 
-    text_owner = str(name_dict)
-    owner = text_owner.split(':')[0][2:-1]
-    doc = text_owner.split(':')[1][2:-2]
-    return path, owner, doc
+    return path, name_dict
 
 
-def write_in_owner(path, owner, doc):
+def write_in_owner(path, text_owner):
     with open(path + '\\' + 'owner_doc.txt', 'w') as f:
-        f.write(owner + '\n' + doc)
+        for i in range(len(text_owner)):
+            string_name = str(text_owner)
+            f.write(f"{str(string_name).split(':')[0]} + '\n' + {str(string_name).split(':')[1]}")
 
 
 def main():
-    path, owner, doc = create_dict_f()
-    write_in_owner(path, owner, doc)
+    path, name_dict = create_dict_f()
+    write_in_owner(path, name_dict)
 
 
 if __name__ == '__main__':
