@@ -14,7 +14,6 @@ def create_dict_f():
             path_doc = path + '\\' + list_text[i]
             try:
                 z = zipfile.ZipFile(path_doc, 'r')
-                z.printdir()
                 z.extract('docProps/core.xml')
                 with open('docProps/core.xml', 'r') as f:
                     string = f.readlines()[1]
