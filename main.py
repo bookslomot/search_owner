@@ -26,12 +26,16 @@ def create_dict_f():
 def write_in_owner(path, text_owner):
     with open(path + '\\' + 'owner_doc.txt', 'w') as f:
         for k in text_owner:
-            string_doc = str(text_owner[k])
-            f.write(f"{k}  \n  {string_doc} \n")
+            string_doc = text_owner[k]
+            f.write(f"{k} \n")
+            for i in range(len(string_doc)):
+                f.write(f'{string_doc[i]} \n')
+            f.write('\n')
 
 
 def main():
     path, name_dict = create_dict_f()
+    name_dict = {'dwewdwdw': ['fwefwefw', 'fwefwefwef', 'fwefwfwfwefe'], 'fewfwfefwfwfeweffew': ['fwefwfefwef', 'fewffwfwfwefwfwf']}
     write_in_owner(path, name_dict)
 
 
