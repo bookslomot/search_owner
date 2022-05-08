@@ -35,7 +35,6 @@ def write_in_owner(path, text_owner):
 
 def main():
     path, name_dict = create_dict_f()
-    name_dict = {'dwewdwdw': ['fwefwefw', 'fwefwefwef', 'fwefwfwfwefe'], 'fewfwfefwfwfeweffew': ['fwefwfefwef', 'fewffwfwfwefwfwf']}
     write_in_owner(path, name_dict)
 
 
